@@ -1,0 +1,1 @@
+This is my GitHub repository for LeetCode solutions and data-structure practice. I created it because tracking my progress and growth in data structures was difficult, so I use this repository to organize my solutions and monitor my improvement over time.
