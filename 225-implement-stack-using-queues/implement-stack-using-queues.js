@@ -1,6 +1,7 @@
 
 var MyStack = function() {
-    this.queue = [];
+    this.q1= [];
+    
 };
 
 /** 
@@ -8,22 +9,19 @@ var MyStack = function() {
  * @return {void}
  */
 MyStack.prototype.push = function(x) {
-    // 1. Push the new element to the back of the queue
-    this.queue.push(x);
-    
-    // 2. Rotate the queue so the newest element comes to the front
-    let size = this.queue.length;
-    for (let i = 0; i < size - 1; i++) {
-        this.queue.push(this.queue.shift());
-    }
+ let size=this.q1.length;
+ this.q1.push(x);
+ for(let i=0;i<size;i++){
+this.q1.push(this.q1.shift());
+ }
 };
 
 /**
  * @return {number}
  */
 MyStack.prototype.pop = function() {
-    // Since the stack top is always at the front, just dequeue it
-    return this.queue.shift();
+    // Since the stack top is alwayts at the front, just dequeue it
+    return this.q1.shift();
 };
 
 /**
@@ -31,12 +29,12 @@ MyStack.prototype.pop = function() {
  */
 MyStack.prototype.top = function() {
     // Peek at the front element of the queue
-    return this.queue[0];
+    return this.q1[0];
 };
 
 /**
  * @return {boolean}
  */
 MyStack.prototype.empty = function() {
-    return this.queue.length === 0;
+    return this.q1.length === 0;
 };
